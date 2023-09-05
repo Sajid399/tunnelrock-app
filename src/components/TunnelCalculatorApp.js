@@ -21,22 +21,20 @@ function TunnelCalculatorApp() {
     try {
       // Parse input values
 
-
-
       // Calculation logic ...  const mb = mi * Math.exp((GSI - 100) / (28 - 14 * D));
       const mb = mi * Math.exp((GSI - 100) / (28 - 14 * D))
       const s = Math.exp((GSI - 100) / (9 - 3 * D));
       const a = 0.5 + (1 / 6) * (Math.exp(-GSI / 15) - Math.exp(-20 / 3));
 
       // Calculate σcm using all five equations
-      const σcm1 = (0.0034 * Math.pow(mi, 0.8)) * σci * Math.pow(1.029 + 0.025 * Math.exp(-0.1 * mi), GSI);
-      const σcm2 = σci * Math.exp((RMR - 100) / 18.75);
-      const σcm3 = (σci * (mi + 4 * s - a * (mb - 8 * s)) * Math.pow((mb / 4) + s, a - 1)) / (2 * (1 + a) * (2 + a));
-      const σcm4 = 5 * Rock_Density * Math.pow((σci / 100) * Q, 1 / 3);
+      const σcm1 = (0.0034 * Math.pow(mi, 0.8)) * σci * Math.pow((1.029 + 0.025 * Math.exp(-0.1 * mi)), GSI);
+      const σcm2 = (σci * Math.exp((RMR - 100) / 18.75));
+      const σcm3 = (σci * (mb + 4 * s - a * (mb - 8 * s)) * (Math.pow((mb / 4) + s, a - 1))) / (2 * (1 + a) * (2 + a));
+      const σcm4 = 5 * Rock_Density * (Math.pow((σci / 100) * Q, 1 / 3));
       const σcm5 = Math.pow(σci, 1.5) / 60;
-
+      
       // Calculate the average value of σcm
-      const σcm = (σcm1 + σcm2 + σcm3 + σcm4 + σcm5) / 5;
+      const σcm = (σcm1 + σcm2 + σcm3 + σcm4 + σcm5) / 5.0;
 
       const sigma_cm = σcm;
       const Po = γ * Actual_overburden;
@@ -86,7 +84,7 @@ function TunnelCalculatorApp() {
   return (
     <div className='container'>
       <div className="secondcontainer">
-      <form className=''>
+      <form className='form'>
         <h3>Tunnel Mechanics Calculator</h3>
         <div className='first'>
       <label  id=''>Mi:<Input value={mi} onChange={(e) => setMi(parseFloat(e.target.value))} placeholder={'Enter mi value'} className="form-control" /></label>

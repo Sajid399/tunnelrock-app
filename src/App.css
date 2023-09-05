@@ -15,6 +15,11 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+@media (max-width:768px){
+  .container{
+    margin: 30px;
+  }
+}
 
 /* Style for the form heading */
 h3 {
@@ -60,16 +65,24 @@ h3 {
   width: 100%;
 }
 
+
 .third {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
+
 .fourth {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+@media (max-width:425px){
+  .first ,.second,.third,.fourth{
+     flex-direction: column;
+  }
 }
 
 .first input[type="number"] {
@@ -99,10 +112,10 @@ h3 {
 
 @media (max-width: 768px) {
   input[type="number"] {
-     width: 100%; 
-    margin: 10px 0;
+     width: 100%;  
   }
 }
+
 .res {
   width: 100%;
 }
