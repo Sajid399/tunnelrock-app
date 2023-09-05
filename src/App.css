@@ -1,0 +1,108 @@
+/* Basic styling for the container */
+body {
+  background-image: url('./components/photorock.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  /* Center the container horizontally */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form heading */
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* Style for input fields */
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.input input {
+  width: 100%;
+  /* Three inputs in a row */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for the "Calculate" button */
+.btn {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.third {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.fourth {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.first input[type="number"] {
+  
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.second input[type="number"] {
+ 
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.third input[type="number"] {
+ 
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.fourth input[type="number"] {
+
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  input[type="number"] {
+     width: 100%; 
+    margin: 10px 0;
+  }
+}
+.res {
+  width: 100%;
+}
